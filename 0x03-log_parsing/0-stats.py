@@ -74,7 +74,7 @@ def parse_metrics():
             except IndexError:
                 date_string = ""
 
-            if is_ip_format(parts[0]) and is_datetime_format(date_string):
+            if is_ip_format(parts[0]) or is_datetime_format(date_string):
                 try:
                     status_code = int(parts[-2])
                     file_size = int(parts[-1])
