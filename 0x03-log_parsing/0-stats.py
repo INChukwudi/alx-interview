@@ -83,8 +83,8 @@ def parse_metrics():
             if line_count == 10:
                 print_metrics(metrics)
                 line_count = 0
-        if line_count > 0:
-            print_metrics(metrics)
+
+        print_metrics(metrics)
     except KeyboardInterrupt:
         print_metrics(metrics)
 
