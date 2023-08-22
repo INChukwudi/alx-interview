@@ -69,7 +69,11 @@ def parse_metrics():
             line_count += 1
             parts = re.split(r'\s+', line.strip())
 
-            date_string = parts[2] + " " + parts[3]
+            try:
+                date_string = parts[2] + " " + parts[3]
+            except IndexError:
+                date_string = ""
+
             if is_ip_format(parts[0]) and is_datetime_format(date_string):
                 try:
                     status_code = int(parts[-2])
